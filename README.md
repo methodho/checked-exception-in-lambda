@@ -1,5 +1,7 @@
 # Checked exception in lambda
 
+## Example
+
 The standard way:
 
 ```java
@@ -19,3 +21,24 @@ Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
 ```
 
 See more in `tw.com.shihyu.function.UncheckedTest`
+
+## API
+
+### Function
+
+- `Function`: `Unchecked.apply(..)`
+- `BiFunction`: `Unchecked.Bi.apply(..)`
+
+### Consumer
+
+- `Consumer`:  `Unchecked.accept(..)`
+- `BiConsumer`:  `Unchecked.Bi.accept(..)`
+
+### Predicate
+
+- `Predicate`:  `Unchecked.test(..)`
+- `BiPredicate`:  `Unchecked.Bi.test(..)`
+
+### Supplier
+
+- `Supplier`:  `Unchecked.get(..)`
