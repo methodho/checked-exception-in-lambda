@@ -1,5 +1,6 @@
 package tw.com.shihyu.function;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -44,6 +45,7 @@ public abstract class Unchecked {
    * @return
    */
   public static RuntimeException propagate(Throwable throwable) {
+    Objects.requireNonNull(throwable, "Throwable must not null to propagate");
     if (throwable instanceof RuntimeException) {
       throw (RuntimeException) throwable;
     } else if (throwable instanceof Error) {
