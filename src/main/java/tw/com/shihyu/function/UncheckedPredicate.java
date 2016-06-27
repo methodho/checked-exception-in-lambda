@@ -20,6 +20,6 @@ public interface UncheckedPredicate<T> extends Predicate<T> {
     }
   }
 
-  boolean testUnchecked(T t) throws Exception;
+  boolean testUnchecked(T t) throws Throwable;
 
 }

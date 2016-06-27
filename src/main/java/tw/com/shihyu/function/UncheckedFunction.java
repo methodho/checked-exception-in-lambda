@@ -21,6 +21,6 @@ public interface UncheckedFunction<T, R> extends Function<T, R> {
     }
   }
 
-  R applyUnchecked(T t) throws Exception;
+  R applyUnchecked(T t) throws Throwable;
 
 }

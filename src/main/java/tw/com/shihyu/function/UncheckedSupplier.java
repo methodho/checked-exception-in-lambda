@@ -20,6 +20,6 @@ public interface UncheckedSupplier<T> extends Supplier<T> {
     }
   }
 
-  T getUnchecked() throws Exception;
+  T getUnchecked() throws Throwable;
 
 }

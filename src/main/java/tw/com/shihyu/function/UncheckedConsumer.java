@@ -20,6 +20,6 @@ public interface UncheckedConsumer<T> extends Consumer<T> {
     }
   }
 
-  void acceptUnchecked(T t) throws Exception;
+  void acceptUnchecked(T t) throws Throwable;
 
 }
