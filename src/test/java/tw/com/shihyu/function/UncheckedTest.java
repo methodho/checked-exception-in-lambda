@@ -36,7 +36,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiConsumer() {
-    map.forEach(Unchecked.accept(this::sysoutKeyAndValue));
+    map.forEach(Unchecked.Bi.accept(this::sysoutKeyAndValue));
   }
 
   private void sysoutKeyAndValue(Object key, Object value) throws Exception {
@@ -45,7 +45,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiFunction() {
-    int actual = map.computeIfPresent(5, Unchecked.apply(this::add));
+    int actual = map.computeIfPresent(5, Unchecked.Bi.apply(this::add));
     Assert.assertEquals(5 + 5, actual);
   }
 
@@ -55,7 +55,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiPredicate() {
-    int actual = map.filter(Unchecked.test(this::keyEqualsValue)).size();
+    int actual = map.filter(Unchecked.Bi.test(this::keyEqualsValue)).size();
     Assert.assertEquals(map.size(), actual);
   }
 

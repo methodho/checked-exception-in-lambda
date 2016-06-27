@@ -19,8 +19,20 @@ public final class Unchecked {
 
   private Unchecked() {}
 
-  public static <T, U, R> BiFunction<T, U, R> apply(UncheckedBiFunction<T, U, R> function) {
-    return function::apply;
+  public final static class Bi {
+    private Bi() {}
+
+    public static <T, U, R> BiFunction<T, U, R> apply(UncheckedBiFunction<T, U, R> function) {
+      return function::apply;
+    }
+
+    public static <T, U> BiConsumer<T, U> accept(UncheckedBiConsumer<T, U> consumer) {
+      return consumer::accept;
+    }
+
+    public static <T, U> BiPredicate<T, U> test(UncheckedBiPredicate<T, U> predicate) {
+      return predicate::test;
+    }
   }
 
   public static <T, R> Function<T, R> apply(UncheckedFunction<T, R> function) {
@@ -31,15 +43,7 @@ public final class Unchecked {
     return comsumer::accept;
   }
 
-  public static <T, U> BiConsumer<T, U> accept(UncheckedBiConsumer<T, U> consumer) {
-    return consumer::accept;
-  }
-
   public static <T> Predicate<T> test(UncheckedPredicate<T> predicate) {
-    return predicate::test;
-  }
-
-  public static <T, U> BiPredicate<T, U> test(UncheckedBiPredicate<T, U> predicate) {
     return predicate::test;
   }
 
