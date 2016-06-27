@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
- * Wraps checked-exception in a {@link RuntimeException} inside {@link FunctionalInterface}
+ * Wraps checked-exception in a {@link RuntimeException}
  * 
  * @author Matt S.Y. Ho
  *
@@ -19,32 +19,32 @@ public final class Unchecked {
 
   private Unchecked() {}
 
-  public static <T, U, R> BiFunction<T, U, R> wrap(UncheckedBiFunction<T, U, R> function) {
+  public static <T, U, R> BiFunction<T, U, R> apply(UncheckedBiFunction<T, U, R> function) {
     return function::apply;
   }
 
-  public static <T, R> Function<T, R> wrap(UncheckedFunction<T, R> function) {
+  public static <T, R> Function<T, R> apply(UncheckedFunction<T, R> function) {
     return function::apply;
   }
 
-  public static <T> Consumer<T> wrap(UncheckedConsumer<T> comsumer) {
+  public static <T> Consumer<T> accept(UncheckedConsumer<T> comsumer) {
     return comsumer::accept;
   }
 
-  public static <T> Predicate<T> wrap(UncheckedPredicate<T> predicate) {
-    return predicate::test;
-  }
-
-  public static <T> Supplier<T> wrap(UncheckedSupplier<T> supplier) {
-    return supplier::get;
-  }
-
-  public static <T, U> BiPredicate<T, U> wrap(UncheckedBiPredicate<T, U> predicate) {
-    return predicate::test;
-  }
-
-  public static <T, U> BiConsumer<T, U> wrap(UncheckedBiConsumer<T, U> consumer) {
+  public static <T, U> BiConsumer<T, U> accept(UncheckedBiConsumer<T, U> consumer) {
     return consumer::accept;
+  }
+
+  public static <T> Predicate<T> test(UncheckedPredicate<T> predicate) {
+    return predicate::test;
+  }
+
+  public static <T, U> BiPredicate<T, U> test(UncheckedBiPredicate<T, U> predicate) {
+    return predicate::test;
+  }
+
+  public static <T> Supplier<T> get(UncheckedSupplier<T> supplier) {
+    return supplier::get;
   }
 
   /**

@@ -36,7 +36,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiConsumer() {
-    map.forEach(Unchecked.wrap(this::sysoutKeyAndValue));
+    map.forEach(Unchecked.accept(this::sysoutKeyAndValue));
   }
 
   private void sysoutKeyAndValue(Object key, Object value) throws Exception {
@@ -45,7 +45,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiFunction() {
-    int actual = map.computeIfPresent(5, Unchecked.wrap(this::add));
+    int actual = map.computeIfPresent(5, Unchecked.apply(this::add));
     Assert.assertEquals(5 + 5, actual);
   }
 
@@ -55,7 +55,7 @@ public class UncheckedTest {
 
   @Test
   public void testBiPredicate() {
-    int actual = map.filter(Unchecked.wrap(this::keyEqualsValue)).size();
+    int actual = map.filter(Unchecked.test(this::keyEqualsValue)).size();
     Assert.assertEquals(map.size(), actual);
   }
 
@@ -65,7 +65,7 @@ public class UncheckedTest {
 
   @Test
   public void testConsumer() {
-    collection.stream().forEach(Unchecked.wrap(this::sysout));
+    collection.stream().forEach(Unchecked.accept(this::sysout));
   }
 
   private void sysout(Object o) throws Exception {
@@ -74,7 +74,7 @@ public class UncheckedTest {
 
   @Test
   public void testFunction() {
-    long actual = collection.stream().map(Unchecked.wrap(this::identity)).count();
+    long actual = collection.stream().map(Unchecked.apply(this::identity)).count();
     Assert.assertEquals(collection.size(), actual);
   }
 
@@ -84,7 +84,7 @@ public class UncheckedTest {
 
   @Test
   public void testPredicate() {
-    long actual = collection.stream().filter(Unchecked.wrap(this::divisible)).count();
+    long actual = collection.stream().filter(Unchecked.test(this::divisible)).count();
     Assert.assertEquals(collection.size() / 2, actual);
   }
 
@@ -95,7 +95,7 @@ public class UncheckedTest {
   @Test
   public void testSupplier() {
     long expected = 10;
-    long actual = Stream.generate(Unchecked.wrap(this::random)).limit(expected).count();
+    long actual = Stream.generate(Unchecked.get(this::random)).limit(expected).count();
     Assert.assertEquals(expected, actual);
   }
 
