@@ -1,6 +1,6 @@
 # Checked exception in lambda
 
-## Example
+## Getting Started
 
 The standard way:
 
@@ -20,7 +20,7 @@ And now become fluently:
 Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
 ```
 
-See more in `tw.com.shihyu.function.UncheckedTest`
+See more example in `tw.com.shihyu.function.UncheckedTest`
 
 ## API
 
