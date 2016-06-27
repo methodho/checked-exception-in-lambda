@@ -1,26 +1,27 @@
 package tw.com.shihyu.function;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
  * 
  * @author Matt S.Y. Ho
  *
  * @param <T>
+ * @param <U>
  * @param <R>
  */
 @FunctionalInterface
-public interface UncheckedBiFunction<T, R> extends Function<T, R> {
+public interface UncheckedBiFunction<T, U, R> extends BiFunction<T, U, R> {
 
   @Override
-  default R apply(T t) {
+  default R apply(T t, U u) {
     try {
-      return applyUnchecked(t);
+      return applyUnchecked(t, u);
     } catch (final Throwable throwable) {
       throw Unchecked.propagate(throwable);
     }
   }
 
-  R applyUnchecked(T t) throws Throwable;
+  R applyUnchecked(T t, U u) throws Throwable;
 
 }
