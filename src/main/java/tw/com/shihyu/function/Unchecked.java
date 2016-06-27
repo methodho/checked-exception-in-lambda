@@ -19,31 +19,31 @@ public final class Unchecked {
 
   private Unchecked() {}
 
-  public static <T, U, R> BiFunction<T, U, R> warp(UncheckedBiFunction<T, U, R> function) {
+  public static <T, U, R> BiFunction<T, U, R> wrap(UncheckedBiFunction<T, U, R> function) {
     return function::apply;
   }
 
-  public static <T, R> Function<T, R> warp(UncheckedFunction<T, R> function) {
+  public static <T, R> Function<T, R> wrap(UncheckedFunction<T, R> function) {
     return function::apply;
   }
 
-  public static <T> Consumer<T> warp(UncheckedConsumer<T> comsumer) {
+  public static <T> Consumer<T> wrap(UncheckedConsumer<T> comsumer) {
     return comsumer::accept;
   }
 
-  public static <T> Predicate<T> warp(UncheckedPredicate<T> predicate) {
+  public static <T> Predicate<T> wrap(UncheckedPredicate<T> predicate) {
     return predicate::test;
   }
 
-  public static <T> Supplier<T> warp(UncheckedSupplier<T> supplier) {
+  public static <T> Supplier<T> wrap(UncheckedSupplier<T> supplier) {
     return supplier::get;
   }
 
-  public static <T, U> BiPredicate<T, U> warp(UncheckedBiPredicate<T, U> predicate) {
+  public static <T, U> BiPredicate<T, U> wrap(UncheckedBiPredicate<T, U> predicate) {
     return predicate::test;
   }
 
-  public static <T, U> BiConsumer<T, U> warp(UncheckedBiConsumer<T, U> consumer) {
+  public static <T, U> BiConsumer<T, U> wrap(UncheckedBiConsumer<T, U> consumer) {
     return consumer::accept;
   }
 
