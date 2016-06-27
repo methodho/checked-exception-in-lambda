@@ -14,7 +14,7 @@ Stream.of(...).map(t -> {
 }).forEach(...);
 ```
 
-And now become fluently:
+And now become more fluently:
 
 ```java
 Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
