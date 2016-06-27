@@ -17,5 +17,5 @@ Stream.of(...).map(t -> {
 Now become:
 
 ```java
-Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
+Stream.of(...).map(Unchecked.warp(Class::forName)).forEach(...);
 ```
