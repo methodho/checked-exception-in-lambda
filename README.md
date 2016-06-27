@@ -7,7 +7,7 @@ The standard way:
 ```java
 Stream.of(...).map(t -> {
     try {
-      // ...
+      return Class.forName(t);
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
     }
