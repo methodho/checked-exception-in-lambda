@@ -19,6 +19,7 @@ public final class Unchecked {
 
   private Unchecked() {}
 
+  // to prevent ambiguous type
   public final static class Bi {
     private Bi() {}
 
