@@ -2,7 +2,7 @@
 
 ## Example
 
-The old way:
+The standard way:
 
 ```java
 Stream.of(...).map(t -> {
@@ -14,7 +14,7 @@ Stream.of(...).map(t -> {
 }).forEach(...);
 ```
 
-Now, become:
+Now become:
 
 ```java
 Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
