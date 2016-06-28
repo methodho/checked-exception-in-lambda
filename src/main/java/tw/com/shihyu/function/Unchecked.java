@@ -60,7 +60,7 @@ public final class Unchecked {
    * try {
    *   // ...
    * } catch (Throwable throwable) {
-   *   throw Unchecked.propagate(throwable);
+   *   throw Unchecked.rethrow(throwable);
    * }
    * </pre>
    * 
