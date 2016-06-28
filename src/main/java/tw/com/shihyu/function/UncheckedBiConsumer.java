@@ -17,7 +17,7 @@ public interface UncheckedBiConsumer<T, U> extends BiConsumer<T, U> {
     try {
       acceptUnchecked(t, u);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

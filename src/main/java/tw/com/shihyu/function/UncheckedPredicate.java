@@ -16,7 +16,7 @@ public interface UncheckedPredicate<T> extends Predicate<T> {
     try {
       return testUnchecked(t);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

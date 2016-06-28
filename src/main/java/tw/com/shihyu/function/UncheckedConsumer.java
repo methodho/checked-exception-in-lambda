@@ -16,7 +16,7 @@ public interface UncheckedConsumer<T> extends Consumer<T> {
     try {
       acceptUnchecked(t);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

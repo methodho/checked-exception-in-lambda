@@ -16,7 +16,7 @@ public interface UncheckedSupplier<T> extends Supplier<T> {
     try {
       return getUnchecked();
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

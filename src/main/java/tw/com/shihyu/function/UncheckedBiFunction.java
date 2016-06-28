@@ -18,7 +18,7 @@ public interface UncheckedBiFunction<T, U, R> extends BiFunction<T, U, R> {
     try {
       return applyUnchecked(t, u);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

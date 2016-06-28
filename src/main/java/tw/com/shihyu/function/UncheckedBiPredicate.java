@@ -17,7 +17,7 @@ public interface UncheckedBiPredicate<T, U> extends BiPredicate<T, U> {
     try {
       return testUnchecked(t, u);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 

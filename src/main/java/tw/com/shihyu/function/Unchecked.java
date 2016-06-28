@@ -53,6 +53,8 @@ public final class Unchecked {
   }
 
   /**
+   * Throwable will be rethrown as is if it is an {@code RuntimeException} or {@code Error}.
+   * Otherwise, it will be rethrown wrapped in a {@code RuntimeException}
    * 
    * <pre>
    * try {
@@ -65,7 +67,7 @@ public final class Unchecked {
    * @param throwable
    * @return
    */
-  public static RuntimeException propagate(Throwable throwable) {
+  public static RuntimeException rethrow(Throwable throwable) {
     Objects.requireNonNull(throwable, "Throwable must not null to propagate");
     if (throwable instanceof RuntimeException) {
       throw (RuntimeException) throwable;

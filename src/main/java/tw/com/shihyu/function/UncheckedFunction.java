@@ -17,7 +17,7 @@ public interface UncheckedFunction<T, R> extends Function<T, R> {
     try {
       return applyUnchecked(t);
     } catch (final Throwable throwable) {
-      throw Unchecked.propagate(throwable);
+      throw Unchecked.rethrow(throwable);
     }
   }
 
