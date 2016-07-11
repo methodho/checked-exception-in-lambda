@@ -1,4 +1,4 @@
-package tw.com.shihyu.function;
+package org.shihyu.function;
 
 import java.util.function.Function;
 

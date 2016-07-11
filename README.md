@@ -20,7 +20,7 @@ And now become more fluently:
 Stream.of(...).map(Unchecked.apply(Class::forName)).forEach(...);
 ```
 
-See more example in `tw.com.shihyu.function.UncheckedTest`
+See more example in `org.shihyu.function.UncheckedTest`
 
 ## API
 

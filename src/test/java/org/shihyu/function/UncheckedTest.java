@@ -1,4 +1,4 @@
-package tw.com.shihyu.function;
+package org.shihyu.function;
 
 
 import static java.util.stream.Collectors.toList;
@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.shihyu.function.Unchecked;
 
 
 public class UncheckedTest {
